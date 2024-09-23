@@ -93,15 +93,15 @@ export const getSignInRequest = async (accessToken: string) => {
 // function: post tool 요청 함수 //
 export const postToolRequest = async (requestBody: PostToolRequestDto, accessToken: string) => {
     const responseBody = await axios.post(POST_TOOL_API_URL, requestBody, bearerAuthorization(accessToken))
-    .then(responseDataHandler<ResponseDto>)
-    .catch(responseErrorHandler);
+        .then(responseDataHandler<ResponseDto>)
+        .catch(responseErrorHandler);
     return responseBody;
 };
 
-// function: get tool list request 요청 함수 //
+// function: get tool list 요청 함수 //
 export const getToolListRequest = async (accessToken: string) => {
     const responseBody = await axios.get(GET_TOOL_LIST_API_URL, bearerAuthorization(accessToken))
-    .then(responseDataHandler<GetToolListResponseDto>)
-    .catch(responseErrorHandler);
+        .then(responseDataHandler<GetToolListResponseDto>)
+        .catch(responseErrorHandler);
     return responseBody;
 };
