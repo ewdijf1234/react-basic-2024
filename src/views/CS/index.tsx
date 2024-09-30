@@ -3,7 +3,7 @@ import './style.css';
 import { usePagination } from 'src/hooks';
 import Pagination from 'src/components/Pagination';
 import { Customer } from 'src/types';
-import { useSIgnInUserStore } from 'src/stores';
+import { useSignInUserStore } from 'src/stores';
 import { useCookies } from 'react-cookie';
 import { ACCESS_TOKEN, CS_DETAIL_ABSOLUTE_PATH, CS_UPDATE_ABSOLUTE_PATH, CS_WRITE_ABSOLUTE_PATH } from 'src/constants';
 import { deleteCustomerRequest, getCustomerListRequest } from 'src/apis';
@@ -22,7 +22,7 @@ interface TableRowProps {
 function TableRow({ customer, getCustomerList }: TableRowProps) {
 
     // state: 로그인 유저 상태 //
-    const { signInUser } = useSIgnInUserStore();
+    const { signInUser } = useSignInUserStore();
 
     // state: cookie 상태 //
     const [cookies] = useCookies();

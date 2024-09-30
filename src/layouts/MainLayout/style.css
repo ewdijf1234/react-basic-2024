@@ -167,9 +167,10 @@
     line-height: 20px;
 }
 
-/*  -------------------
- *  메인 내부 스타일
- */ -------------------
+/* -------------------
+메인 내부 스타일
+------------------- */
+
 #mm-wrapper,
 #cs-wrapper,
 #hr-wrapper {
@@ -190,7 +191,8 @@
 
 #mm-wrapper .main, 
 #cs-wrapper .main,
-#hr-wrapper .main {
+#hr-wrapper .main,
+#cs-detail-wrapper .main {
     display: flex;
     flex-direction: column;
 

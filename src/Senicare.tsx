@@ -19,7 +19,7 @@ import { useSearchParams } from 'react-router-dom';
 import { getSignInRequest } from './apis';
 import { GetSignInResponseDto } from './apis/dto/response/nurse';
 import { ResponseDto } from './apis/dto/response';
-import { useSIgnInUserStore } from './stores';
+import { useSignInUserStore } from './stores';
 
 // component: root path 컴포넌트 //
 function Index() {
@@ -75,7 +75,7 @@ function SnsSuccess() {
 export default function Senicare() {
 
     // state: 로그인 유저 정보 상태 //
-    const { signInUser, setSignInUser } = useSIgnInUserStore();
+    const { signInUser, setSignInUser } = useSignInUserStore();
 
     // state: cookie 상태 //
     const [cookies, setCookie, removeCookie] = useCookies();
@@ -122,8 +122,8 @@ export default function Senicare() {
             <Route path={CS_PATH} element={<MainLayout />}>
                 <Route index element={<CS />} />
                 <Route path={CS_WRITE_PATH} element={<CSWrite />} />
-                <Route path={CS_DETAIL_PATH(':customNumber')} element={<CSDetail />} />
-                <Route path={CS_UPDATE_PATH(':customNumber')} element={<CSUpdate />} />
+                <Route path={CS_DETAIL_PATH(':customerNumber')} element={<CSDetail />} />
+                <Route path={CS_UPDATE_PATH(':customerNumber')} element={<CSUpdate />} />
             </Route>
             <Route path={MM_PATH} element={<MainLayout />}>
                 <Route index element={<MM />} />
